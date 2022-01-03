@@ -39,15 +39,18 @@
           and Pro Bono services for eligible candidates.
         </p>
 
-        <a class="inquiries card" onclick="overlayInquiries()">
+        <a class="inquiries card" onclick="overlay('inquiries__content')">
           <h3 class="inquiries__header">General <br />Inquiries</h3>
         </a>
-        <a class="services card" onclick="overlayServices()">
+        <a class="services card" onclick="overlay('services__content')">
           <h3 class="services__header">Victims <br />Services</h3>
+        </a>
+        <a class="resources card" onclick="overlay('resources__content')">
+          <h3 class="resources__header">Victims <br />Resources</h3>
         </a>
       </section>
 
-      <div id="inquiries__content" class="inquiries__content">
+      <div id="inquiries__content" class="overlay">
         <h2>General Inquiries</h2>
         <ul>
           <li>Sliding scale rate</li>
@@ -87,29 +90,33 @@
           </li>
         </ul>
 
-        <a class="close" onclick="hideInquiries()">X</a>
+        <a class="close" onclick="hide('inquiries__content')">X</a>
       </div>
-      <div id="services__content" class="services__content">
+      <div id="services__content" class="overlay">
         <p>Services</p>
-        <a class="close" onclick="hideServices()">x</a>
+        <a class="close" onclick="hide('services__content')">x</a>
+      </div>
+      <div id="resources__content" class="overlay">
+        <p>Resources</p>
+        <a class="close" onclick="hide('resources__content')">x</a>
       </div>
     </main>
+
+
+
+
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script>
-      // overlay
-      function overlayInquiries() {
-        document.getElementById("inquiries__content").className += " show";
+      // overlay ------------------------------------>
+      function overlay(x) {
+        document.getElementById(x).classList += " show";
       }
-      function hideInquiries() {
-        document.getElementById("inquiries__content").classList.remove("show");
+      function hide(x) {  
+        document.getElementById(x).classList.remove("show");
       }
-      function overlayServices() {
-        document.getElementById("services__content").className += " show";
-      }
-      function hideServices() {
-        document.getElementById("services__content").classList.remove("show");
-      }
-      // intro fade on scroll
+      
+      // intro fade on scroll ------------------->
       $(window).scroll(function (e) {
         parallax();
       });
