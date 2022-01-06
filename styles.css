@@ -86,19 +86,15 @@ select {
   text-align: center;
   justify-content: space-evenly;
   text-transform: uppercase;
-  color: white;
-  background: #000000; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to bottom,
-    #434343,
-    #000000
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to bottom,
-    #434343,
-    #000000
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: rgb(1, 67, 248);
+  text-shadow:1px 1px 3px black;
 
+  background: url(images/pexels-nikita-koshechkin-9904010.jpg); /* fallback for old browsers */
+
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   animation: fadeInAnimation ease-in-out 1.5s;
   animation-iteration-count: 1;
   animation-fill-mode: backwards;
@@ -115,11 +111,13 @@ select {
   font-family: "Merriweather", serif;
   font-weight: 900;
   font-size: clamp(2rem, 3vw, 3rem);
+  text-shadow:2px 2px 3px white;
 }
 .intro__image {
   width: clamp(200px, 30%, 400px);
   border-radius: 50%;
   box-shadow: 0 0 50px #ccc;
+  opacity: .9;
 }
 .intro__tagline {
   width: clamp(25ch, 50%, 60ch);
@@ -133,7 +131,16 @@ main {
   place-items: center;
   margin: auto;
   height: 100vh;
-  background: black;
+    background: -webkit-linear-gradient(
+    to top,
+    #434343,
+    #000000
+  ); 
+  background: linear-gradient(
+    to top,
+    #434343,
+    #000000
+  ); 
 }
 .navigation {
   display: grid;
@@ -184,32 +191,38 @@ main {
 /* overlay content */
 
 .overlay {
-  height: 100%;
-  width: 100%;
   position: fixed;
   z-index: 6;
   top: 0;
   left: 0;
+  right: 0;
   background-color: lightgray;
   overflow-x: hidden;
-  -webkit-transition: 0.5s ease-out;
-  transition: 0.5s ease-out;
+  -webkit-transition: 0.4s ease-out;
+  transition: 0.4s ease-out;
   color: #000000;
-  margin-left: -100%;
-  margin-top: 200%;
+  transform: translate(-200%, 200%);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
+  border-radius: 10px;
 }
 .show {
-  margin: 0;
+  transform: translate(0, 0);
+  width: 90%;
+  height: 90%;
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+ 
+    
 }
 .close {
   position: absolute;
   top: 25px;
-  right: 25px;
+  right: 35px;
   font-size: 35px;
   z-index: 20;
   cursor: pointer;
